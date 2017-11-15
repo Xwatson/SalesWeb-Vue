@@ -1,0 +1,7 @@
+export const CALL_API = 'CALL_API'
+export const LOADING_SHOW = 'LOADING_SHOW'
+export const LOADING_HIDE = 'LOADING_HIDE'
+export const REQUEST_START = 'REQUEST_START'
+
+export const GET_GOODS_API = 'GET_GOODS_API'
+export const GET_GOODS_API_FAIL = 'GET_GOODS_API_FAIL'

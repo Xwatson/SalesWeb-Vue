@@ -2,6 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <h3>{{ env }}</h3>
+    <button @click="addToCart">点击</button>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -21,13 +23,18 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+    name: 'HelloWorld',
+    data() {
+        return {
+            msg: 'Welcome to Your Vue.js App',
+            env: process.env.NODE_ENV
+        }
+    },
+    methods: mapActions([
+        'addToCart'
+    ])
 }
 </script>
 
