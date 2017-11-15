@@ -1,0 +1,31 @@
+{
+  "development" : {
+    "cdnHost"                   : "http://localhost",
+    "apiHost"                   : "http://xxx.xxx.com",
+    "port"                      : 3001,
+    "compiler_public_path"      : "http://localhost:3001/"
+  },
+
+  "qa" : {
+    "cdnHost"                   : "http://xxx.xxx.com",
+    "apiHost"                   : "http://xxx.xxx.com",
+    "port"                      : "",
+    "compiler_public_path"      : "http://xxx.xxx.com/"
+  },
+  
+  "production" : {
+    "cdnHost"                   : "http://xxx.xxx.com",
+    "apiHost"                   : "http://xxx.xxx.com",
+    "port"                      : "",
+    "compiler_public_path"      : "http://xxx.xxx.com/"
+  },
+  "auto_open_browser" : true,
+  "app_title"         : "SalesWeb-Vue",
+  "entry"             : "./src/main.js",
+  "src_dir"           : "src",
+  "public_dir"        : "static",
+  "templates_dir"     : "templates",
+  "assets_dir"        : "assets",
+  "build_dir"         : "dist",
+  "banner"            : "Yootai inc."
+}

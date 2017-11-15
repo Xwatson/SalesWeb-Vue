@@ -4,13 +4,15 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+const conf = require('./config')
 
+const env = conf[process.env.NODE_ENV]
 module.exports = {
   build: {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: conf.public_dir,
     assetsPublicPath: '/',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
@@ -27,9 +29,9 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: process.env.PORT || 8080,
-    autoOpenBrowser: true,
-    assetsSubDirectory: 'static',
+    port: env.port || 8080,
+    autoOpenBrowser: conf.auto_open_browser,
+    assetsSubDirectory: conf.public_dir,
     assetsPublicPath: '/',
     proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"
@@ -38,5 +40,17 @@ module.exports = {
     // In our experience, they generally work as expected,
     // just be aware of this issue when enabling this option.
     cssSourceMap: false
-  }
+  },
+  qa: {
+    env: require('./qa.env'),
+  },
+  server_host  : env.cdnHost,
+  server_port  : env.port || 8080,
+  path_base    : path.resolve(__dirname, '..'),
+  dir_client   : conf.src_dir,
+  dir_dist     : conf.build_dir,
+  dir_public   : conf.public_dir,
+  entry        : conf.entry,
+  banner       : conf.banner,
+  template_dir : conf.templates_dir
 }
