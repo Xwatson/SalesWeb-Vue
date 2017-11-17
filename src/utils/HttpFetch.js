@@ -6,6 +6,7 @@ import FormData from 'form-data'
 import ResponseCode from './ResponseCode'
 import auth from './Auth'
 import Encrypt from './Encrypt'
+import Loading from './Loading'
 
 export const SIGN_OS = 'XXXXXXXXX-SING'
 function formatParams(options) {
@@ -71,6 +72,11 @@ export default function(endpoint, options) { // , schema
     options = dealWithCommonParmas(options)
     const prams = ObjectUtils.clone(options.body)
     const fullUrl = AppConstants.getUrl(endpoint) + formatParams(options)
+    // 触发加载事件
+    Loading.emitLoadingListener({
+        api: endpoint,
+        option: options
+    })
     return fetch(fullUrl, options)
         .then(response =>
             response.json().then(json => ({ json, response }))
