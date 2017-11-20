@@ -1,9 +1,7 @@
 <template>
-  <el-container>
-    <el-main>
-      <router-view/>
-    </el-main>
-  </el-container>
+<div class="login-layout">
+  <router-view/>
+</div>
 </template>
 
 <script>
@@ -14,4 +12,8 @@ export default {
 
 <style>
 @import '../assets/css/base.css';
+@import '../assets/fonts/iconfont.css';
+.login-layout{
+  height: 100%
+}
 </style>
