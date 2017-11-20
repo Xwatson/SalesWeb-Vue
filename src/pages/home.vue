@@ -1,5 +1,8 @@
 <template>
-    <h1>欢迎</h1>
+    <div>
+        <h1>欢迎</h1>
+        <el-button>aaa</el-button>
+    </div>
 </template>
 
 <script>
